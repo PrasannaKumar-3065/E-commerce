@@ -1,0 +1,110 @@
+body{
+  background-color: #ffffff;
+}
+.header{
+  font-size: 40px;
+  font-style: italic;
+  font-family: cursive;
+  font-weight: bold;
+  text-decoration:underline;
+}
+
+.search{
+  margin-right: 1%;
+  width: 20%;
+  float:right;
+  border-radius: 6%;
+  border:solid #000 3px;
+}
+
+.nav{
+    background-color: #00000039;
+    height: 30px;
+    width: 99%;
+    padding: 5px;
+    position: fixed;
+}
+
+
+.cart-div{
+  float:right;
+  width: 30px;
+  height: 30px;
+}
+
+.cart{
+  position: fixed;
+}
+
+.badge{
+  z-index: 1;
+  position: fixed;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  background-color: #fd8d2b;
+}
+
+.container{
+  margin-top: 2%;
+  padding: 10px;
+  display: flex;
+  height: 100%;
+  gap: 5px;
+}
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px;  
+  height: 100%; 
+  gap: 10px;
+}
+
+.card{
+  text-align: center;
+  width: 24%;
+  height: 20%;
+  border: solid #000 2px;
+}
+
+.card div{
+  width: 100%;
+  height: 50%;
+}
+
+.card img{
+  border-radius: 5px;
+}
+
+.card-details{
+  line-height: 9px;
+  display: block;
+}
+.card-details button{
+  width: 100%;
+  height: 5%;
+  color: #ffffff;
+  background-color: #000;
+}
+.card-details button:hover{
+  color: #000;
+  background-color: #ffffff;
+}
+.filter{
+  display: none;
+  width: 20%;
+  padding: 10px;
+  border-radius:10px;
+  height: 100%; 
+  border: solid#fd8d2b 2px;
+}
+
+.filter-spec{
+  padding: 5px;
+}
+
+
