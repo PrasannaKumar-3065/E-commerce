@@ -1,4 +1,4 @@
-import logo from '../images/cart.svg';
+
 const Header = () =>{
     return (
         <div className="header">

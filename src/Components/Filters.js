@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect } from "react"
 import { filterContext } from "../App"
 const fil = (filter,setFilter,name) =>{
     let index = filter.indexOf(name) 

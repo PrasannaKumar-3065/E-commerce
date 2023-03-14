@@ -1,13 +1,11 @@
 import Search from "./Search";
 import img from "../images/cart.svg";
-import filter from "../images/filter.svg";
+
 import { cartContext } from "../App";
 import { useContext } from "react";
-import {BrowserRouter as Switch, Link, Routes } from "react-router-dom";
-import Products from "./Products";
-
+import { Link } from "react-router-dom";
 const Nav = () => {
-  const { cart, updateCart } = useContext(cartContext);
+  const { cart } = useContext(cartContext);
   return (
     <div className="nav">
       <div className="cart-div">

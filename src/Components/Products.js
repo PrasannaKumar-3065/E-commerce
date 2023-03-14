@@ -6,7 +6,7 @@ import { cartContext, filterContext } from "../App"
 
 const Products = (props) =>{
     const {cart, updateCart} = useContext(cartContext)
-    const {filter, setFilter} = useContext(filterContext)
+    const {filter} = useContext(filterContext)
     return (<div className="products">
         {props.items.map(prod => {
             if(filter.length === 0){
