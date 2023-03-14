@@ -7,33 +7,43 @@ body{
   font-family: cursive;
   font-weight: bold;
   text-decoration:underline;
+  position: fixed;
+  width: 100%;
+  top:0;
+  height: 10%;
+  z-index: 1;
+  background-color: #ffffff;
 }
 
 .search{
-  margin-right: 1%;
-  width: 20%;
-  float:right;
-  border-radius: 6%;
-  border:solid #000 3px;
+  margin-left: 30%;
+  width: 50%;
+  height: 90%;
+  border:solid #000 1px;
 }
 
 .nav{
-    background-color: #00000039;
-    height: 30px;
+    position: fixed;
+    background-color: #00000090;
+    height: 40px;
     width: 99%;
     padding: 5px;
-    position: fixed;
+    top:10%;
+    z-index: 1;
 }
 
 
 .cart-div{
   float:right;
   width: 30px;
-  height: 30px;
+  height: 50px;
+  margin-right: 2%;
 }
 
 .cart{
   position: fixed;
+  z-index: 1;
+  height: 40px;
 }
 
 .badge{
@@ -48,29 +58,33 @@ body{
 }
 
 .container{
-  margin-top: 2%;
+  margin-top: 8%;
   padding: 10px;
   display: flex;
   height: 100%;
-  gap: 5px;
 }
 
 .products{
+  
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   padding: 10px;  
   height: 100%; 
   gap: 10px;
+  border: solid #d0cece 2px;
 }
 
 .card{
+  padding: 5px;
   text-align: center;
-  width: 24%;
-  height: 20%;
-  border: solid #000 2px;
+  width: 22%;
+  height: 220px;
+  border: solid #ffffff 2px;
 }
-
+.card:hover{
+  background-color:#eee;
+}
 .card div{
   width: 100%;
   height: 50%;
@@ -86,7 +100,7 @@ body{
 }
 .card-details button{
   width: 100%;
-  height: 5%;
+  height: 40%;
   color: #ffffff;
   background-color: #000;
 }
@@ -95,16 +109,88 @@ body{
   background-color: #ffffff;
 }
 .filter{
-  display: none;
+  border: solid #d0cece 2px;
   width: 20%;
   padding: 10px;
-  border-radius:10px;
-  height: 100%; 
-  border: solid#fd8d2b 2px;
+  height: 100vh; 
 }
 
+.list button{
+  width: 90%;
+  margin-right: 2px;
+  border-radius: 10px;
+}
 .filter-spec{
   padding: 5px;
+}
+
+.cart-page{
+  padding: 5px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5%;
+}
+
+.cart-items{
+  display: flex;
+  padding: 10px;
+  border: solid #000 2px;
+  width: 100%;
+  margin: 7px;
+}
+.cart-title{
+  font-weight: bold;
+  font-size: 19px;
+  padding: 5px;
+  height: 120px;
+  width: 30%;
+}
+
+.back{
+  border: none;
+  width: 100%;
+  font-size: 30px;
+}
+.back:hover{
+  color: #eee;
+  background-color: #000;
+}
+.cart-desc{
+  padding: 5px;
+  height: 120px;
+  width: 30%;
+}
+.cart-button{
+  padding: 5px;
+  display: block;
+  width: 30%;
+}
+.subtotal{
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  height: 10%;
+  color: #fd8d2b;
+  background-color: #000;
+  float: right;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.subtotal span{
+  
+}
+.cart-button button{
+  margin: auto;
+  width: 30%;
+  height: 20%;
+  color: #ffffff;
+  background-color: #000;
+}
+.cart-button button:hover{
+  color: #000;
+  background-color: #ffffff;
 }
 
 

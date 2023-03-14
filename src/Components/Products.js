@@ -1,45 +1,23 @@
+
+//rating
 import { useContext } from "react"
 import Card from "./Card"
-import { cartContext } from "../App"
+import { cartContext, filterContext } from "../App"
 
-const valCart = ( cart,id ) =>{
-    for(let item of cart){
-        if(item.id === id){
-            return true
-        }
-    }
-    return false
-}
-
-const addCart = (cart,updateCart,id) =>{
-    let index = cart.indexOf(id)
-    if(index === -1){
-        updateCart([...cart,id])
-    }
-    else{
-        let temp = [...cart]
-        temp.splice(index,1);
-        updateCart(temp)
-    }
-}
-
-const Products = () =>{
-    const items = [{"id":1,"name":"Apple Macbook","price":3000,"image":"apple-macbook.jpeg"},
-                   {"id":2,"name":"Asus Tuf Gaming","price":3000,"image":"Asus-tuf.jpeg"},
-                   {"id":3,"name":"Infinix Inbook","price":3000,"image":"infinix-inbook.jpeg"},
-                   {"id":4,"name":"Lonovo","price":3000,"image":"lenovo.jpeg"},
-                   {"id":5,"name":"Asus Vivobook","price":3000,"image":"asus-vivobook.jpeg"},
-                   {"id":5,"name":"Dell Vostro","price":3000,"image":"dell-vostro.jpeg"},
-                   {"id":5,"name":"HP 14-s","price":3000,"image":"hp-14s.jpeg"},
-                   {"id":5,"name":"Infinix Zerobook","price":3000,"image":"infinix-zerobook.jpeg"},
-                   {"id":5,"name":"HP","price":3000,"image":"hp.jpeg"},
-                   {"id":5,"name":"Lenovo Intel Celeron","price":3000,"image":"lenovo-intel-celeron.jpeg"},
-                   {"id":5,"name":"Acer Aspire 3","price":3000,"image":"acer-aspire-3.jpeg"},
-                   {"id":5,"name":"Lenovo Ideapad 3","price":3000,"image":"lenovo-ideapad-3.jpeg"}
-                    ]
+const Products = (props) =>{
     const {cart, updateCart} = useContext(cartContext)
+    const {filter, setFilter} = useContext(filterContext)
     return (<div className="products">
-        {items.map(prod => <Card><div><img width="100px" height="100px" src = {require("../images/"+prod.image) }/></div><div className="card-details"><p>{prod.name}</p><p>{prod.price}</p><button onClick={addCart(cart,updateCart,prod.id)}>{valCart(cart,prod.id)?"Remove from cart":"Add to cart"}</button></div></Card>)}
+        {props.items.map(prod => {
+            if(filter.length === 0){
+                return <Card className="card"><div><img width="100px" height="100px" src = {require("../images/"+prod.image) }/></div><div className="card-details"><p>{prod.name}</p><p><b>{"$"+prod.price}</b></p><button onClick={()=>props.addCart(cart,updateCart,prod.id)}>{props.valCart(cart,prod.id)?"Remove from cart":"Add to cart"}</button></div></Card>
+            }
+            else{   
+                if(filter.indexOf(prod.brand) != -1 || filter.indexOf(prod.ram) != -1 || filter.indexOf(prod.storage) != -1){
+                    return <Card className="card"><div><img width="100px" height="100px" src = {require("../images/"+prod.image) }/></div><div className="card-details"><p>{prod.name}</p><p><b>{"$"+prod.price}</b></p><button  onClick={()=>props.addCart(cart,updateCart,prod.id)}>{props.valCart(cart,prod.id)?"Remove from cart":"Add to cart"}</button></div></Card>
+                }
+            }
+        })}
     </div>)
 }
 
