@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useMemo, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header";
 import Nav from "./Components/Nav";
@@ -12,10 +12,7 @@ export const cartContext = createContext();
 export const filterContext = createContext()
 
 const valCart = ( cart,id ) =>{
-  if(cart.indexOf(id) != -1){
-      return true
-  }
-  return false
+  return cart.indexOf(id) != -1
 }
 
 const addCart = (cart,updateCart,id) =>{
@@ -56,11 +53,14 @@ function App() {
                     ]
   const [cart, updateCart] = useState([])
   const [filter,setFilter] = useState([])
+  const CartMemo = useMemo(()=>{return{cart,updateCart}},[cart])
+  const filterMemo = useMemo(()=>{return{filter,setFilter}},[filter])
+  
   return (
     <>
       <Header />
-      <filterContext.Provider value={{filter,setFilter}}>
-        <cartContext.Provider value={{ cart, updateCart }}>
+      <filterContext.Provider value={filterMemo}>
+        <cartContext.Provider value={CartMemo}>
           <BrowserRouter>
             <Nav />
             <Container>
