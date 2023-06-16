@@ -1,17 +1,12 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 18
   build:
     commands:
       - npm run build
 
 artifacts:
   files:
-    - '**/*'
-  base-directory: 'build/'
-  name: <desired-artifact-name>
+    - 'build/**/*'
+  base-directory: 'build'
   discard-paths: yes
-  no-override-artifact-name: yes
