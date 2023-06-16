@@ -17,4 +17,6 @@ artifacts:
   files:
     - '**/*'
   base-directory: 'build/'
+  name: 'new'
   discard-paths: yes
+  override-artifact-name: yes
