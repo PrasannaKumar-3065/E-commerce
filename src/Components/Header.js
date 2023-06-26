@@ -2,7 +2,7 @@
 const Header = () =>{
     return (
         <div className="header">
-            <span>Lapz</span>
+            <span>LapMM</span>
         </div>)
 }
 export default Header
